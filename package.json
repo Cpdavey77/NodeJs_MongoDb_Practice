@@ -1,0 +1,13 @@
+{
+  "name": "nodejs_mongodb_practice",
+  "version": "1.0.0",
+  "description": "Small project for testing CRUD operations on mongodb",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cpdavey77/NodeJs_MongoDb_Practice.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.13.0"
+  }
+}
