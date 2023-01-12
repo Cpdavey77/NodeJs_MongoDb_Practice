@@ -40,7 +40,7 @@ class Student {
         }
         finally
         {
-            mongoClient.close();
+            this.mongoClient.close();
         }
     }
 
