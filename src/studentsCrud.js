@@ -65,6 +65,7 @@ class Student {
         }
         finally
         {
+            console.log("Student created!");
             this.mongoClient.close();
         }
     }
@@ -91,6 +92,7 @@ class Student {
         }
         finally
         {
+            console.log("Data downloaded from server");
             this.mongoClient.close();
         }
     }
@@ -141,6 +143,7 @@ class Student {
         }
         finally
         {
+            console.log("Student updated");
             this.mongoClient.close();
         }
     }
@@ -163,6 +166,7 @@ class Student {
             return await this.collection.deleteMany({ name });
         } finally 
         {
+            console.log("Student deleted");
             this.mongoClient.close();
         }
     }
