@@ -45,7 +45,8 @@ class Student {
     }
 
     // For inserting a student into the database
-    async insert(studentDocument) {
+    async insert(studentDocument) 
+    {
         try
         {
             // Connect to MongoDB
@@ -68,7 +69,8 @@ class Student {
         }
     }
 
-    async findAll() {
+    async findAll() 
+    {
         try
         {
             // Connect to MongoDB
@@ -93,7 +95,8 @@ class Student {
         }
     }
 
-    async findOne(student) {
+    async findOne(student) 
+    {
         try
         {
             // Connect to MongoDB
@@ -112,6 +115,26 @@ class Student {
             console.log(`Student: ${data.name}`);
             console.log(`Hobby: ${data.hobby}`);
 
+        }
+        finally
+        {
+            this.mongoClient.close();
+        }
+    }
+
+    async updateStudent(name, updatedFields) 
+    {
+        try
+        {
+            this.mongoClient = await this.connect();
+
+            this.db = this.mongoClient.db(this.db);
+
+            this.collection = this.db.collection("students");
+
+            console.log("Updating...");
+
+            return await this.collection.updateMany({ name }, {$set: updatedFields});
         }
         finally
         {
