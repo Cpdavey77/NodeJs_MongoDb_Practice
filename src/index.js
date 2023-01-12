@@ -48,18 +48,33 @@ const student = {name: "Patrick", hobby: "Playing"}
 // }
 // findAllStudents();
 
-// Get One Student
-const findStudent = async(student) => {
-    try
-    {
-        newStudent = new Student();
+// // Get One Student
+// const findStudent = async(student) => {
+//     try
+//     {
+//         newStudent = new Student();
 
-        return newStudent.findOne(student);
-    }
-    catch(err)
-    {
-        console.error(err);
-    }
-}
-findStudent("Patrick");
+//         return newStudent.findOne(student);
+//     }
+//     catch(err)
+//     {
+//         console.error(err);
+//     }
+// }
+// findStudent("Patrick");
 
+
+// // Get One Student
+// const findStudent = async(student) => {
+//     try
+//     {
+//         newStudent = new Student();
+
+//         return newStudent.findOne(student);
+//     }
+//     catch(err)
+//     {
+//         console.error(err);
+//     }
+// }
+// findStudent("Patrick");
