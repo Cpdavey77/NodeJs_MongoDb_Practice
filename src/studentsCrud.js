@@ -126,10 +126,13 @@ class Student {
     {
         try
         {
+            // Connect to MongoDB
             this.mongoClient = await this.connect();
 
-            this.db = this.mongoClient.db(this.db);
+            // Connect to the database
+            this.db = this.mongoClient.db(this.DB);
 
+            // Connect to the collection(table)
             this.collection = this.db.collection("students");
 
             console.log("Updating...");
@@ -137,6 +140,28 @@ class Student {
             return await this.collection.updateMany({ name }, {$set: updatedFields});
         }
         finally
+        {
+            this.mongoClient.close();
+        }
+    }
+
+    async deleteStudent(name)
+    {
+        try 
+        {
+            // Connect to MongoDB
+            this.mongoClient = await this.connect();
+
+            // Connect to the database
+            this.db = this.mongoClient.db(this.DB);
+
+            // Connect to the collection(table)
+            this.collection = this.db.collection("students");
+
+            console.log("Deleting student..");
+
+            return await this.collection.deleteMany({ name });
+        } finally 
         {
             this.mongoClient.close();
         }
