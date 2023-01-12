@@ -48,6 +48,7 @@ const student = {name: "Patrick", hobby: "Playing"}
 // }
 // findAllStudents();
 
+// Get One Student
 const findStudent = async(student) => {
     try
     {
