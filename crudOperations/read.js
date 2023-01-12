@@ -18,7 +18,7 @@ const student = "Patrick"
 
 // getStudent(student);
 
-// // Query one student
+// // Query all student
 
 const getAllStudent = async(name) => {
     try
